@@ -1,4 +1,4 @@
-import createReducer from '@global/createReducer';
+import createReducer from '@app/createReducer';
 import * as constants from '@actions/loginActions/constants';
 
 const intialState = {};
