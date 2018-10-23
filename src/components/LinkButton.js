@@ -5,30 +5,25 @@ import {
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '@themes'
+import {colors} from '@themes'
 const styles = StyleSheet.create({
   buttonDefaultStyle: {
-    borderWidth: 1,
-    borderRadius: 4,
-    backgroundColor: colors.colorBorderFont,
 
   },
   buttonDefaultTextStyle: {
-    fontSize: 16,
-    color: 'white',
-    fontWeight: '800',
+    color: colors.colorBorderFont
   },
 });
 
-const Button = (props) => {
+const LinkButton = (props) => {
   const {
     text,
     buttonTextStyles,
-    buttonStyle,
+    LinkbuttonStyle,
     onPress,
   } = props;
   return (
-    <TouchableOpacity style={buttonStyle} onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity style={LinkbuttonStyle} onPress={onPress} activeOpacity={0.9}>
       <Text style={buttonTextStyles}>
         { text }
       </Text>
@@ -36,14 +31,14 @@ const Button = (props) => {
   );
 };
 
-Button.propTypes = {
+LinkButton.propTypes = {
   onPress: PropTypes.func.isRequired,
   buttonTextStyles: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.number,
     PropTypes.shape({}),
   ]),
-  buttonStyle: PropTypes.oneOfType([
+  LinkbuttonStyle: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.number,
     PropTypes.shape({}),
@@ -51,8 +46,8 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
 };
 
-Button.defaultProps = {
-  buttonStyle: styles.buttonDefaultStyle,
+LinkButton.defaultProps = {
+  LinkbuttonStyle: styles.buttonDefaultStyle,
   buttonTextStyles: styles.buttonDefaultTextStyle,
 };
-export default Button;
+export default LinkButton;
