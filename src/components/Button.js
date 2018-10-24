@@ -5,7 +5,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { colors } from '@themes'
+import { colors } from '@themes';
 const styles = StyleSheet.create({
   buttonDefaultStyle: {
     borderWidth: 1,

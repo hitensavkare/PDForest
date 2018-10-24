@@ -18,6 +18,7 @@ export default StyleSheet.create({
     height: 48,
     marginLeft: 16,
     marginRight: 16,
+    borderRadius: 16,
     backgroundColor: colors.colorBorderFont,
   },
   logoContainer: {
