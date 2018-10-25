@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { colors, images } from '@themes'
+import { Actions } from 'react-native-router-flux';
 const FlatRow = props => (
     <View style={styles.headerView}>
       <View style={styles.rowContainer}>
@@ -27,10 +28,10 @@ const FlatRow = props => (
       </View>
 
       <View style={styles.rowContainer}>
-        <View style={styles.detailContainer}>
+        <TouchableOpacity style={styles.detailContainer} onPress={()=>{Actions.Uploader()}}>
           <Text style={styles.heading}>Uploaded By</Text>
           <Text>Hitendra subhash Savkare</Text>
-        </View>
+        </TouchableOpacity>
 
         <View style={[styles.detailContainer,{marginLeft: 4}]}>
           <Text style={styles.heading}>Uploaded Date</Text>

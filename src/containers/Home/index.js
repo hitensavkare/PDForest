@@ -8,6 +8,8 @@ import {
 import {images, colors} from '@themes'
 import { FloatingAction } from 'react-native-floating-action';
 import {Header, FlatRow} from '@components'
+import { Actions } from 'react-native-router-flux';
+
 const actions = [{
   text: 'Upload PDF',
   icon: <View><Text>hello</Text></View>,
@@ -40,7 +42,9 @@ class Home extends Component {
       dataSource: [{id:1},{id:1},{id:1},{id:1}]
     }
   }
-
+_gotoAciton(){
+  Actions.SelfProfile()
+}
   render() {
     const { dataSource } = this.state
     return (
@@ -80,16 +84,13 @@ class Home extends Component {
           extraData={this.state}
           keyExtractor={(item, index) => index.toString()}
         />
-        <FloatingAction
-          color={colors.colorBorderFont}
-       actions={actions}
-       onPressItem={
-         (name) => {
-           alert(`selected button: ${name}`);
-         }
-       }
-     />
+
    </ScrollView>
+   <FloatingAction
+     color={colors.colorBorderFont}
+     actions={actions}
+     onPressItem={(name) => {this._gotoAciton()}}
+/>
       </View>
     );
   }

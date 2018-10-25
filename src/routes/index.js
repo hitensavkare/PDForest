@@ -3,6 +3,8 @@ import { Scene, Router } from 'react-native-router-flux';
 import Login from '@containers/auth';
 import AnimTest from '@containers/AnimTest';
 import Home from '@containers/Home';
+import SelfProfile from '@containers/users/SelfProfile';
+import Uploader from '@containers/users/Uploader';
 class Routes extends Component {
   constructor(props) {
     super(props);
@@ -30,9 +32,11 @@ class Routes extends Component {
         hideNavBar="hideNavBar"
         hideTabBar="hideTabBar"
       >
-        <Scene key="Login" title="Login"  component={Login} />
+        <Scene key="Login" title="Login" component={Login} />
         <Scene key="AnimTest" title="Login" component={AnimTest} />
         <Scene key="Home" title="Home" initial component={Home} />
+        <Scene key="SelfProfile" title="SelfProfile" component={SelfProfile} />
+        <Scene key="Uploader" title="Uploader"  component={Uploader} />
       </Scene>
     );
   }
