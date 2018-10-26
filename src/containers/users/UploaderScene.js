@@ -7,11 +7,13 @@ import {
   Dimensions,
   Image
 } from 'react-native';
-const window = Dimensions.get('window');
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import { colors,images } from '@themes';
+
+const window = Dimensions.get('window');
+
 const styles = StyleSheet.create({
   profileContainer: {
     alignSelf: 'center',
@@ -124,31 +126,14 @@ const UploaderScene = (props) => {
               </View>
               <Text style={styles.opTextColor}>Followers</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.opContainerBody} onPress= {()=>onPress('Following')}>
-              <View style={ tabClicked==='Following'?styles.opOneActive:styles.opOne}>
-                <Icon name="download" size={24} color={colors.colorUploaderProfile} />
-              </View>
-              <Text style={styles.opTextColor}>Following</Text>
-            </TouchableOpacity>
-
             <TouchableOpacity style={styles.opContainerBody} onPress= {()=>onPress('Public')}>
               <View style={ tabClicked==='Public'?styles.opOneActive:styles.opOne}>
                 <Icon name="download" size={24} color={colors.colorUploaderProfile} />
               </View>
               <Text style={styles.opTextColor}>Public</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity style={styles.opContainerBody} onPress= {()=>onPress('Private')}>
-              <View style={ tabClicked==='Private'?styles.opOneActive:styles.opOne}>
-                <Icon name="download" size={24} color={colors.colorUploaderProfile} />
-              </View>
-              <Text style={styles.opTextColor}>Private</Text>
-            </TouchableOpacity>
-
           </View>
-
         </View>
-
       </View>
     </View>
   );

@@ -67,10 +67,11 @@ const styles = StyleSheet.create({
 
 const Public = (props) => {
   const {
+    actionVisible,
     onPress,
   } = props;
   return (
-    <View style={styles.profileContainer}>
+    <TouchableOpacity style={styles.profileContainer} activeOpacity={0.8}>
       <View style={styles.rowContainer}>
         <View style={styles.coverPhotoContainer}>
           <Image source={images.imgLoginBack} style={styles.coverPhoto} />
@@ -81,9 +82,9 @@ const Public = (props) => {
           <Text>Education</Text>
           <Text>Uploaded on: Jan 12 2018</Text>
         </View>
-        <View style={styles.optIcon}>
+        <TouchableOpacity style={styles.optIcon} onPress={actionVisible} activeOpacity={0.8}>
           <Icon name="dots-vertical" size={24} color={colors.colorBorderFont} />
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.rowContainer}>
         <View style={styles.coverPhotoContainer} />
@@ -103,11 +104,12 @@ const Public = (props) => {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 Public.propTypes = {
+  actionVisible: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 

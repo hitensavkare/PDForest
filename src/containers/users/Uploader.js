@@ -39,19 +39,7 @@ class Uploader extends Component {
         <FlatList
           data={dataSource}
           renderItem={({ item }) => (
-            <Followers data={item} />)}
-          extraData={this.state}
-          keyExtractor={(item, index) => index.toString()}
-        />
-      );
-    }
-
-    if (tabClicked === 'Following') {
-      return (
-        <FlatList
-          data={dataSource}
-          renderItem={({ item }) => (
-            <Following data={item} />)}
+            <Followers data={item}  />)}
           extraData={this.state}
           keyExtractor={(item, index) => index.toString()}
         />
@@ -70,17 +58,6 @@ class Uploader extends Component {
       );
     }
 
-    if (tabClicked === 'Private') {
-      return (
-        <FlatList
-          data={dataSource}
-          renderItem={({ item }) => (
-            <Private data={item} />)}
-          extraData={this.state}
-          keyExtractor={(item, index) => index.toString()}
-        />
-      );
-    }
   }
 
   render() {
@@ -96,7 +73,7 @@ class Uploader extends Component {
           activeOpacity={0.8}
           >
           <Text style={styles.textFollow}>
-            {isFollowing === false ?'Follow':'Following'}
+            {isFollowing === false ?'Follow':'Unfollow'}
           </Text>
         </TouchableOpacity>
         <View style={{ height: '60%' }}>

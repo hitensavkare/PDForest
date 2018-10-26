@@ -5,6 +5,7 @@ import AnimTest from '@containers/AnimTest';
 import Home from '@containers/Home';
 import SelfProfile from '@containers/users/SelfProfile';
 import Uploader from '@containers/users/Uploader';
+import Register from '@containers/auth/Register'
 class Routes extends Component {
   constructor(props) {
     super(props);
@@ -33,10 +34,10 @@ class Routes extends Component {
         hideTabBar="hideTabBar"
       >
         <Scene key="Login" title="Login" component={Login} />
-        <Scene key="AnimTest" title="Login" component={AnimTest} />
-        <Scene key="Home" title="Home" initial component={Home} />
+        <Scene key="Home" title="Home" component={Home} />
         <Scene key="SelfProfile" title="SelfProfile" component={SelfProfile} />
-        <Scene key="Uploader" title="Uploader"  component={Uploader} />
+        <Scene key="Uploader" title="Uploader" component={Uploader} />
+        <Scene key="Register" title="Register" initial component={Register} />
       </Scene>
     );
   }

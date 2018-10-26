@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
 const Following = (props) => {
   const {
     onPress,
+    actionVisible
   } = props;
   return (
     <View style={styles.profileContainer}>
@@ -66,10 +67,9 @@ const Following = (props) => {
           <Text>Mumbai</Text>
         </View>
 
-        <View style={styles.optIcon}>
+        <TouchableOpacity style={styles.optIcon} onPress={actionVisible} activeOpacity={0.8}>
           <Icon name="dots-vertical" size={24} color={colors.colorBorderFont} />
-
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -77,6 +77,7 @@ const Following = (props) => {
 
 Following.propTypes = {
   onPress: PropTypes.func.isRequired,
+  actionVisible: PropTypes.func.isRequired,
 };
 
 Following.defaultProps = {

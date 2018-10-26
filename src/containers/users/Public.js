@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     flex:3,
-    justifyContent: 'center',
+    //justifyContent: 'center',
     marginLeft: 16,
   },
   titleText: {
@@ -61,16 +61,21 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: colors.colorBorderFont
+  },
+  categoryText: {
+    fontWeight: '600',
+
   }
 
 });
 
 const Public = (props) => {
   const {
+    actionVisible,
     onPress,
   } = props;
   return (
-    <View style={styles.profileContainer}>
+    <TouchableOpacity style={styles.profileContainer} activeOpacity={0.8}>
       <View style={styles.rowContainer}>
         <View style={styles.coverPhotoContainer}>
           <Image source={images.imgLoginBack} style={styles.coverPhoto} />
@@ -78,16 +83,27 @@ const Public = (props) => {
 
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>The new of the Jungle Public</Text>
-          <Text>Education</Text>
+
+            <Text style={styles.categoryText}>Education</Text>
+
+
           <Text>Uploaded on: Jan 12 2018</Text>
         </View>
-        <View style={styles.optIcon}>
-          <Icon name="dots-vertical" size={24} color={colors.colorBorderFont} />
-        </View>
+        {
+          actionVisible === undefined ?
+            null
+            :
+            (
+              <TouchableOpacity style={styles.optIcon} onPress={actionVisible} activeOpacity={0.8}>
+                <Icon name="dots-vertical" size={24} color={colors.colorBorderFont} />
+              </TouchableOpacity>
+            )
+        }
+
       </View>
       <View style={styles.rowContainer}>
         <View style={styles.coverPhotoContainer} />
-        <View style={[styles.titleContainer,{ flexDirection: 'row' ,justifyContent: 'center' }]}>
+        <View style={[styles.titleContainer,{ flexDirection: 'row', justifyContent: 'center' }]}>
           <View style={styles.pdfStatus}>
             <Text style={styles.infoTag}>Downloads</Text>
             <Text style={styles.info}>25</Text>
@@ -97,17 +113,27 @@ const Public = (props) => {
             <Text style={styles.info}>25</Text>
           </View>
 
-          <View style={styles.pdfStatus}>
+
+          {
+            actionVisible === undefined ? (
+<View style={styles.pdfStatus}>
+              <Text style={styles.infoTag}>Reports</Text>
+              <Text style={styles.info}>25</Text>
+            </View>
+):
+              <View style={styles.pdfStatus}>             :
             <Text style={styles.infoTag}>Comments</Text>
             <Text style={styles.info}>25</Text>
           </View>
+          }
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
 Public.propTypes = {
+  actionVisible: PropTypes.func.isRequired,
   onPress: PropTypes.func.isRequired,
 };
 

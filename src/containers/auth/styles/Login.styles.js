@@ -22,12 +22,12 @@ export default StyleSheet.create({
     backgroundColor: colors.colorBorderFont,
   },
   logoContainer: {
-    width: normalizeImage(110),
-    height: normalizeImage(110),
+    width: normalizeImage(60),
+    height: normalizeImage(60),
     borderRadius: 220 / 2,
     backgroundColor: 'red',
     alignSelf: 'center',
-    marginTop: win.height / 8,
+    marginTop: win.height / 16,
   },
   inputStyle: {
     padding: 8,
